@@ -971,5 +971,40 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script id="mobile-hero-button-position">
+document.addEventListener('DOMContentLoaded', function () {
+  const hero = document.querySelector('#welcome.hero');
+  if (!hero) return;
+
+  const button = hero.querySelector('.hero-copy .discover-button');
+  const visual = hero.querySelector('.hero-visual');
+
+  if (!button || !visual) return;
+
+  const originalPosition = document.createComment('original discover button position');
+  button.before(originalPosition);
+
+  const mobile = window.matchMedia('(max-width: 768px)');
+
+  function updateButtonPosition() {
+    if (mobile.matches) {
+      visual.after(button);
+      button.style.marginTop = '22px';
+      button.style.alignSelf = 'flex-start';
+      button.style.justifySelf = 'start';
+    } else {
+      originalPosition.after(button);
+      button.style.marginTop = '';
+      button.style.alignSelf = '';
+      button.style.justifySelf = '';
+    }
+  }
+
+  updateButtonPosition();
+  mobile.addEventListener('change', updateButtonPosition);
+});
+</script>
+
 </body>
 </html>
