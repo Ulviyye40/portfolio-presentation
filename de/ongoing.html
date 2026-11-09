@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>My Work in Germany | Ulviyya Osmanova</title>
+<style>
+:root { --wine:#842C4B; --ink:#29252a; --muted:#69656a; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:Arial,Helvetica,sans-serif; background:#fff; color:var(--ink); line-height:1.75; }
+header { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.97); border-bottom:1px solid #eee; }
+nav { max-width:1150px; margin:auto; min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:15px 25px; }
+.brand { font-size:19px; font-weight:700; color:var(--ink); text-decoration:none; }
+nav .back { color:var(--wine); text-decoration:none; font-weight:600; }
+main { max-width:1150px; margin:auto; padding:80px 25px 110px; }
+.eyebrow { color:var(--wine); font-size:13px; font-weight:700; letter-spacing:3px; }
+h1 { font-size:clamp(36px,5vw,58px); font-weight:500; line-height:1.2; margin:15px 0 22px; }
+.intro { color:var(--muted); max-width:750px; font-size:17px; }
+.project { display:grid; grid-template-columns:1fr 1fr; gap:65px; align-items:center; margin-top:110px; }
+.project.reverse .visual { order:-1; }
+.number { color:var(--wine); font-size:14px; letter-spacing:2px; font-weight:700; }
+h2 { font-size:clamp(27px,3vw,37px); line-height:1.3; font-weight:500; margin:12px 0 25px; }
+h3 { color:var(--wine); font-size:15px; margin:23px 0 5px; }
+p { margin:0 0 10px; }
+.visual { min-height:330px; background:#f6f1f3; border-radius:22px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.visual img { width:100%; height:100%; min-height:330px; object-fit:contain; display:block; }
+.placeholder { padding:35px; color:#8b6574; text-align:center; }
+footer { background:var(--wine); color:white; padding:35px 25px; text-align:center; font-size:14px; }
+footer a { color:white; }
+@media(max-width:760px) {
+ nav { min-height:65px; }
+ .brand { font-size:15px; }
+ main { padding:55px 22px 80px; }
+ .project { grid-template-columns:1fr; gap:25px; margin-top:75px; }
+ .project.reverse .visual { order:0; }
+ .visual,.visual img { min-height:240px; }
+}
+
+/* Language switch */
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 18px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+}
+.lang-active {
+  color: #842C4B;
+}
+.lang-inactive {
+  color: inherit;
+  opacity: .65;
+}
+.lang-divider {
+  opacity: .35;
+}
+
+
+/* Active language */
+.language-switch a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.language-switch .lang-active {
+  color: #842C4B;
+  opacity: 1;
+}
+.language-switch .lang-inactive {
+  color: inherit;
+  opacity: .65;
+}
+
+</style>
+<style id="shared-portfolio-style">
+:root {
+  --ink:#171717;
+  --muted:#545454;
+  --wine:#842c4b;
+  --paper:#fff;
+  --soft:#f7f5f5;
+  --line:#e9e4e6;
+}
+body { color:var(--ink); }
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.95);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+.site-header .wrap {
+  width:min(1180px,calc(100% - 64px));
+  margin:auto;
+}
+.site-header .nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:84px;
+  max-width:none;
+  gap:24px;
+  padding:0;
+}
+.site-header .logo {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--ink);
+  text-decoration:none;
+  font-size:clamp(21px,2.1vw,29px);
+  font-weight:750;
+  letter-spacing:-1.1px;
+  white-space:nowrap;
+}
+.site-header .logo svg {
+  width:22px;
+  height:22px;
+  color:var(--ink);
+  flex-shrink:0;
+}
+.site-header .nav-links {
+  display:flex;
+  align-items:center;
+  gap:clamp(14px,1.7vw,26px);
+  margin-left:auto;
+}
+.site-header .nav-links a {
+  color:var(--ink);
+  font-size:19px;
+  font-weight:600;
+  text-decoration:none;
+}
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active {
+  color:var(--wine);
+}
+.site-header .nav-projects { position:relative; }
+.site-header .projects-trigger {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+}
+.site-header .projects-submenu {
+  position:absolute;
+  top:100%;
+  left:-15px;
+  min-width:210px;
+  padding:12px 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.09);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:.2s;
+  z-index:110;
+}
+.site-header .projects-submenu a {
+  display:block;
+  padding:9px 16px;
+  font-size:15px;
+  white-space:nowrap;
+}
+.site-header .nav-projects:hover .projects-submenu,
+.site-header .nav-projects:focus-within .projects-submenu {
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+.site-header .digital-back {
+  color:var(--wine);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  white-space:nowrap;
+}
+main h1 {
+  font-size:clamp(35px,3.65vw,52px);
+  font-weight:700;
+  line-height:1.16;
+  letter-spacing:-.035em;
+}
+main h2 {
+  font-weight:600;
+  letter-spacing:-.035em;
+}
+.portfolio-gratitude-footer {
+  background:var(--wine);
+  color:#fff;
+  padding:52px 20px 25px;
+  text-align:left;
+}
+.portfolio-gratitude-footer .wrap {
+  max-width:1100px;
+  margin:auto;
+}
+.portfolio-gratitude-footer .portfolio-footer-links {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:30px 70px;
+  min-height:0;
+  max-width:none;
+  padding:0 0 34px;
+  margin:0;
+  align-items:start;
+}
+.portfolio-footer-group h3 {
+  color:#fff;
+  font-size:17px;
+  margin:0 0 17px;
+  font-weight:650;
+}
+.portfolio-footer-group a {
+  display:block;
+  width:fit-content;
+  color:rgba(255,255,255,.88);
+  font-size:14px;
+  line-height:1.55;
+  margin:0 0 12px;
+  text-decoration:none;
+}
+.portfolio-footer-group a:hover {
+  color:#fff;
+  text-decoration:underline;
+}
+.portfolio-footer-bottom {
+  border-top:1px solid rgba(255,255,255,.28);
+  padding-top:22px;
+  text-align:center;
+}
+.portfolio-footer-bottom p {
+  color:rgba(255,255,255,.85);
+  font-size:12px;
+  line-height:1.7;
+  margin:0 0 9px;
+}
+.portfolio-footer-bottom strong { color:#fff; }
+@media(max-width:900px) {
+  .site-header .nav { flex-wrap:wrap; padding:14px 0; }
+  .site-header .nav-links { order:3; width:100%; overflow-x:auto; }
+}
+@media(max-width:680px) {
+  .site-header .wrap { width:calc(100% - 36px); }
+  .site-header .logo { font-size:21px; white-space:normal; }
+  .site-header .nav-links a { font-size:15px; }
+  .site-header .digital-back { font-size:12px; }
+  .portfolio-gratitude-footer .portfolio-footer-links {
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+}
+</style>
+<style id="germany-work-styles">
+.germany-work{max-width:1150px;margin:0 auto;padding:56px 24px 90px;color:var(--ink,#29252a)}
+.germany-intro{max-width:850px;margin:0 auto 68px;text-align:center}
+.germany-eyebrow,.germany-number{color:var(--wine,#842C4B);font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.germany-intro h1{font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:10px 0 25px}
+.germany-intro p{line-height:1.8;color:var(--muted,#69656a)}
+.germany-project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:clamp(28px,5vw,76px);margin:0 0 90px}
+.germany-project.germany-reverse .germany-photo{order:2}
+.germany-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px}
+.germany-copy h2{font-size:clamp(1.5rem,2.5vw,2.15rem);line-height:1.3;margin:12px 0 28px}
+.germany-copy h3{font-size:1rem;color:var(--wine,#842C4B);margin:24px 0 7px}
+.germany-copy p{line-height:1.8;margin:0 0 10px;color:var(--muted,#69656a)}
+.germany-link{color:var(--wine,#842C4B);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.germany-work{padding:36px 20px 65px}.germany-intro{margin-bottom:44px}.germany-project{grid-template-columns:1fr;gap:22px;margin-bottom:60px}.germany-project.germany-reverse .germany-photo{order:0}.germany-photo img{aspect-ratio:4/3}}
+</style>
+<style id="germany-typography-final">
+.germany-work {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 92px 24px 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.germany-intro-matched {
+    max-width: none;
+    margin: 0 0 95px;
+    text-align: left;
+}
+
+.germany-intro-matched .germany-eyebrow {
+    color: #842C4B;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+}
+
+.germany-intro-matched h1 {
+    
+    
+    
+    
+    margin: 0 0 28px;
+    color: #191919;
+}
+
+.germany-intro-matched p:not(.germany-eyebrow) {
+    max-width: 750px;
+    font-size: 17px;
+    line-height: 1.75;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: #69656a;
+    margin: 0 0 12px;
+}
+
+@media (max-width: 760px) {
+    .germany-work {
+        padding: 48px 20px 55px;
+    }
+    .germany-intro-matched {
+        margin-bottom: 45px;
+    }
+    .germany-intro-matched h1 {
+        
+    }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<nav aria-label="Main navigation" class="nav wrap">
+<a aria-label="Back to homepage" class="logo" href="index.html">
+<svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22">
+<path d="m3 10 9-7 9 7"></path>
+<path d="M5 9v12h14V9"></path>
+<path d="M9 21v-8h6v8"></path>
+</svg>
+      Mehr als nur ein Lebenslauf
+    </a>
+<div class="nav-links">
+<a href="index.html#who-i-am">Wer ich bin</a>
+<div class="nav-projects">
+<a class="projects-trigger" href="index.html#what-ive-done">Meine Projekte <span aria-hidden="true" class="chevron">⌄</span></a>
+<div aria-label="Project categories" class="projects-submenu">
+<a href="digital.html">Digitale Projekte</a>
+<a href="social.html">Soziale Projekte</a>
+<a href="ongoing.html">Meine Arbeit in Deutschland</a>
+</div>
+</div>
+<a href="index.html#beyond-work">Abseits der Arbeit</a>
+<a href="index.html#lets-connect">Kontakt</a>
+</div>
+<div aria-label="Language selection" class="language-switch">
+<a class="lang-inactive" href="../ongoing.html" lang="en">EN</a>
+<span aria-hidden="true" class="lang-divider">|</span>
+<a aria-current="page" class="lang-active" href="ongoing.html" lang="de">DE</a>
+</div>
+</nav>
+</header>
+<main class="germany-work" id="germany-work">
+<section class="germany-intro germany-intro-matched">
+<p class="eyebrow germany-eyebrow">Meine Projekte / Meine Arbeit in Deutschland</p>
+<h1>Meine Arbeit in Deutschland</h1>
+<p>Nach meiner langjährigen Berufserfahrung in Aserbaidschan begann mit meinem Umzug nach Deutschland ein neues Kapitel meiner beruflichen Laufbahn.</p>
+<p>Parallel zu meinem Masterstudium im Bereich European Management an der TH Wildau sammle ich weiterhin praktische Erfahrungen in unterschiedlichen beruflichen Umfeldern. Dabei bringe ich meine bisherigen Kenntnisse ein und entwickle gleichzeitig neue Kompetenzen.</p>
+</section>
+<section aria-labelledby="aimused-heading" class="germany-project">
+<div class="germany-photo"><img alt="Tactile samples and 3D-printed objects displayed for the AIMused project" loading="lazy" src="../images/aimused-work.jpg"/></div>
+<div class="germany-copy">
+<h2 id="aimused-heading">AIMused | TH Wildau</h2>
+<h3>Über das Projekt</h3>
+<p>AIMused (Accessibility Integration and Artificial Intelligence for Museums) ist ein internationales europäisches Projekt, an dem Partner aus fünf Ländern des südlichen Ostseeraums beteiligt sind, darunter die TH Wildau in Deutschland. Ziel des Projekts ist es, die Barrierefreiheit von Museen und anderen touristischen Einrichtungen durch künstliche Intelligenz, inklusives Design sowie die Entwicklung digitaler und physischer Hilfsmittel für Besucherinnen und Besucher mit unterschiedlichen Bedürfnissen zu verbessern.</p>
+<h3>Mein Beitrag</h3>
+<p>Im Rahmen meiner Tätigkeit als studentische Mitarbeiterin an der TH Wildau war ich am AIMused-Projekt beteiligt. Ich führte eine qualitative Literatur- und Dokumentenrecherche zur Barrierefreiheit von Museen durch, analysierte wissenschaftliche Quellen, klassifizierte die Bedürfnisse von Besucherinnen und Besuchern sowie verschiedene Arten physischer und taktiler Objekte und identifizierte relevante Gestaltungsmerkmale und deren Auswirkungen auf die Barrierefreiheit.</p>
+<h3>Aktuelle Aufgaben</h3>
+<p>Analyse der bestehenden Wissenssammlung des AIMused-Projekts sowie Erstellung von Fachartikeln für die Wissensdatenbank (Knowledge Base) auf der Projektwebsite.</p>
+</div>
+</section>
+<section aria-labelledby="varpoint-heading" class="germany-project germany-reverse">
+<div class="germany-photo"><img alt="Illuminated VARPOINT sign at the Berlin Tempelhof virtual reality venue" loading="lazy" src="../images/varpoint-work.jpg"/></div>
+<div class="germany-copy">
+<h2 id="varpoint-heading">HOVR Entertainment GmbH | VARPOINT VR Berlin Tempelhof</h2>
+<h3>Über das Unternehmen</h3>
+<p>Die HOVR Entertainment GmbH betreibt VARPOINT VR Berlin Tempelhof, ein Virtual-Reality-Erlebniszentrum, das immersive Spielerlebnisse, Gruppenaktivitäten, Geburtstagsfeiern und Firmenevents anbietet.</p>
+<h3>Mein Beitrag</h3>
+<p>Aufbau der Social-Media-Präsenz, Einrichtung von Google-Konten und des Google Unternehmensprofils sowie Umsetzung digitaler Werbekampagnen zur Stärkung der Online-Präsenz des Unternehmens.</p>
+<h3>Aktuelle Aufgaben</h3>
+<p>Optimierung der Website, Erstellung digitaler Inhalte, Pflege des Google Unternehmensprofils, internes Reporting sowie Entwicklung und Dokumentation betrieblicher Abläufe.</p>
+</div>
+</section>
+</main>
+<footer aria-label="Footer navigation and acknowledgements" class="footer portfolio-gratitude-footer">
+<div class="wrap">
+<nav aria-label="Footer navigation" class="portfolio-footer-links">
+<div class="portfolio-footer-group">
+<h3>Entdecken</h3>
+<a href="#who-i-am">Über mich</a>
+<a href="digital.html">Digitale Projekte</a>
+<a href="social.html">Soziale Projekte</a>
+<a href="ongoing.html">Meine Arbeit in Deutschland</a>
+</div>
+<div class="portfolio-footer-group">
+<h3>Dokumente</h3>
+<a href="#professional-recommendations">Empfehlungsschreiben</a>
+<a download="Ulviyya_Osmanova_CV.pdf" href="../images/Ulviyya_Osmanova_CV.pdf">CV herunterladen</a>
+</div>
+</nav>
+<div class="portfolio-footer-bottom">
+<p>Diese Website entstand im Rahmen des Kurses „International Marketing Project“. Mein herzlicher Dank gilt <strong>Professor Dr. Lydia Göse</strong> für ihre wertvolle Unterstützung und fachliche Begleitung.</p>
+<p>© 2026 Ulviyya Osmanova. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
